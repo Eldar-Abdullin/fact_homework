@@ -7,12 +7,34 @@
     margin: 20px auto;
 }
 .header{
-
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
 }
 .h1{
     text-align: center;
+    margin-left: 300px;
+}
+.menu{
+    align-self: center;
+    justify-self: right;
+    margin: 0 0 0 30px;
+    float: right;
+    display: flex;
+    flex-direction: row;
+    width: 250px;
+    justify-content: space-between;
+}
+.url{
+    text-decoration: none;
+    color: white;
+}
+.table__img {
+    height: 50px;
 }
 .main{
+    margin-top: 50px;
     display: grid;
     grid-template-columns: 3fr 2fr 2fr;
     grid-template-rows: 1fr 3fr;

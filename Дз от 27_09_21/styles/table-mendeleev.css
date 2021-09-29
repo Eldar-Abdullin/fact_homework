@@ -1,0 +1,83 @@
+.table, tr, td{
+    border: 1px black solid;
+    border-collapse: collapse;
+    margin: auto;
+    width: 420px;
+    height: 90px;
+    padding: 0;
+}
+.url{
+    text-decoration: none;
+    color: black;
+}
+.element{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+    background-color: #f66;
+    grid-template-areas:
+    "letter number"
+    "letter mass"
+    "element .";
+    transition: background-color linear 0.5s;
+}
+.element:hover {
+    background-color: yellow;
+}
+.cuprum, .zincum{
+    background-color: cornflowerblue;
+    grid-template-areas:
+    "number letter"
+    "mass letter"
+    ". element";
+}
+.cuprum__number, .zincum__number{
+    text-align: start;
+}
+.letter, .number, .mass, .element__name{
+    margin: 0;
+    padding: 0;
+}
+.letter{
+    grid-area: letter;
+    font-size: 96px;
+    text-align: start;
+    line-height: 1;
+}
+.number{
+    grid-area: number;
+    font-weight: bold;
+    font-size: 34px;
+    text-align: end;
+}
+.mass{
+    grid-area: mass;
+    font-size: 34px;
+}
+.element__name{
+    grid-area: element;
+    font-size: 34px;
+}
+.cuprum__number, .zincum__number{
+    text-align: start;
+}
+.cuprum__letter, .zincum__letter{
+    text-align: end;
+}
+.element__name_cuprum, .element__name_zincum{
+    text-align: end;
+}
+.back{
+    margin: 40px auto 0 auto;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    width: min-content;
+    font-size: 50px;
+    transition: font-size linear 0.5s;
+}
+.back:hover{
+    font-size: 72px;
+}
