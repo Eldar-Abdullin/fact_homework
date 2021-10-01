@@ -9,6 +9,7 @@
 .url{
     text-decoration: none;
     color: black;
+    display: block;
 }
 .element{
     height: 100%;
