@@ -1,3 +1,14 @@
+<?
+date_default_timezone_set('Asia/Yekaterinburg');
+$time = date(G);
+$url = '';
+if($time > 8 && $time < 20){
+    $url = "images/sun.png";
+}
+else{
+    $url = "images/moon.png";
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,6 +23,7 @@
 <header>
     <div class="header">
         <h1 class="h1">Личная страничка студента</h1>
+        <img class="time" src='<? echo $url?>' alt="">
         <nav class="menu">
             <a class="url" href="table-mendeleev.html">
                 <img class="table__img" src="images/table.png" alt="">

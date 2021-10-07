@@ -45,6 +45,16 @@ section{
         margin-right: auto;
     }
 }
+.time{
+    width: 150px;
+    display: block;
+    margin: 0 auto 0 auto;
+}
+@media screen and (max-width: 425px) {
+    .time{
+        width: 100px;
+    }
+}
 .menu{
     align-self: center;
     justify-self: right;
