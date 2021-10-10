@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('header.css');
+@import url('arrays.css');
+@import url('table-mendeleev.css');
 .page {
     background-image: url(https://phonoteka.org/uploads/posts/2021-03/1616705966_20-p-kartinki-dlya-fona-saita-24.jpg);
     color: white;
@@ -19,59 +22,7 @@ section{
 /*        margin-left: 30px;*/
 /*    }*/
 /*}*/
-.header{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-}
-@media screen and (max-width: 425px) {
-    .header{
-        flex-direction: column;
-    }
-}
-.h1{
-    text-align: center;
-    margin-left: 300px;
-}
-@media screen and (max-width: 768px) {
-    .h1{
-        margin-left: 40px;
-    }
-}
-@media screen and (max-width: 425px) {
-    .h1{
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-.time{
-    width: 150px;
-    display: block;
-    margin: 0 auto 0 auto;
-}
-@media screen and (max-width: 425px) {
-    .time{
-        width: 100px;
-    }
-}
-.menu{
-    align-self: center;
-    justify-self: right;
-    margin: 0 0 0 30px;
-    float: right;
-    display: flex;
-    flex-direction: row;
-    width: 250px;
-    justify-content: space-around;
-}
-.url{
-    text-decoration: none;
-    color: white;
-}
-.table__img {
-    height: 50px;
-}
+
 .about-me{
     margin-top: 50px;
     display: grid;
@@ -100,37 +51,33 @@ section{
     margin: 0 auto 0 auto;
     border-radius: 50%;
     width: 80%;
-    border: 3px blue dotted;
-}
-.img:hover {
-    border: 3px yellow dotted;
 }
 .name {
     font-size: 30px;
     grid-area: name;
-}
-.name:hover {
-    border: 3px yellow dotted;
-}
-.about {
-    grid-area: about;
-}
-.about:hover {
-    border: 3px yellow dotted;
-}
-.feedback {
-    grid-area: feedback;
-}
-.feedback:hover {
-    border: 3px yellow dotted;
-}
-.name, .about, .feedback {
-    border: 3px blue dotted;
     padding: 30px 0;
     margin: 0;
     text-align: center;
 }
-
+.about {
+    grid-area: about;
+    padding: 30px 0;
+    margin: 0;
+    text-align: center;
+}
+.feedback {
+    grid-area: feedback;
+    padding: 30px 0;
+    margin: 0;
+    text-align: center;
+}
+.border {
+    border: 3px blue dotted;
+    transition: border linear 0.3s;
+}
+.border:hover {
+    border: 3px yellow dotted;
+}
 .film_title{
     text-align: center;
     font-size: 48px;

@@ -6,7 +6,7 @@
     height: 90px;
     padding: 0;
 }
-.url{
+.table__url{
     text-decoration: none;
     color: black;
     display: block;
@@ -74,7 +74,7 @@
     margin: 40px auto 0 auto;
     text-align: center;
     text-decoration: none;
-    color: black;
+    color: white;
     width: min-content;
     font-size: 50px;
     transition: font-size linear 0.5s;

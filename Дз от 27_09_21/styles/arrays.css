@@ -1,0 +1,15 @@
+.arrays {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.array {
+    padding: 5px;
+    margin: 5px;
+}
+.array__title{
+    text-align: center;
+    margin: 0 auto 0 auto;
+    padding: 0;
+    font-size: 24px;
+}

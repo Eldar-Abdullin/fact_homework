@@ -1,0 +1,67 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>Эльдар</title>
+</head>
+<body class="page">
+<?
+require_once('header.php');
+?>
+<main class="main">
+    <section class="about-me">
+    <img class="img border" src="../images/eldar-abdullin.jpeg" alt="Фото" title="фото">
+    <h2 class="name border">Эльдар Абдуллин</h2>
+    <p class="about border">О себе:<br> заканчиваю обучение в Яндекс Практикуме,поступил в школу ФАКТ. </p>
+    <p class="feedback border">Все нравится!&#128077;</p>
+    </section>
+    <section class="fincher">
+        <h2 class="film_title"> Любимые фильмы Дэвида Финчера</h2>
+    <div class="table__fincher-films">
+        <div class="film">
+            <img class="film__img" src="../images/fight-club.jpg" alt="Бойцовский клуб">
+            <p class="film__paragraph">Бойцовский клуб</p>
+        </div>
+        <div class="film">
+            <img class="film__img" src="../images/se7en.jpg" alt="7емь">
+            <p class="film__paragraph">7емь</p>
+        </div>
+        <div class="film">
+            <img class="film__img" src="../images/social-network.jpg" alt="Социальная сеть">
+            <p class="film__paragraph">Социальная сеть</p>
+        </div>
+        <div class="film">
+            <img class="film__img" src="../images/batton.jpg" alt="Загадочная история Бенджамина Баттона">
+            <p class="film__paragraph">Загадочная история Бенджамина Баттона</p>
+        </div>
+    </div>
+    </section>
+    <section>
+        <h2 class="film_title"> Любимые фильмы Гая Ричи</h2>
+        <div class="table__richie-films">
+            <div class="film film_richie">
+                <img class="film__img" src="../images/lock,stock_and_two_smoking_barrels.jpg" alt="Карты, деньги, два ствола">
+                <p class="film__paragraph">Карты, деньги, два ствола</p>
+            </div>
+            <div class="film film_richie">
+                <img class="film__img" src="../images/snatch.jpg" alt="Большой куш">
+                <p class="film__paragraph">Большой куш</p>
+            </div>
+            <div class="film film_richie">
+                <img class="film__img" src="../images/sherlock_holmes.jpg" alt="Шерлок Холмс">
+                <p class="film__paragraph">Шерлок Холмс</p>
+            </div>
+            <div class="film film_richie">
+                <img class="film__img" src="../images/the_gentlemen.jpg" alt="Джентльмены">
+                <p class="film__paragraph">Джентльмены</p>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>
