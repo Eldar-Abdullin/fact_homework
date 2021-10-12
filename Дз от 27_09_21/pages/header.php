@@ -1,6 +1,6 @@
 <?
 date_default_timezone_set('Asia/Yekaterinburg');
-$time = date(G);
+$time = date('G');
 $url = '';
 if($time > 8 && $time < 20){
     $url = "../images/sun.png";
