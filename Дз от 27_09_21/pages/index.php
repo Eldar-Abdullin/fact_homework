@@ -21,7 +21,6 @@ $date2 = DateTime::createFromFormat('d.m.Y',$date); // Преобразовыв�
 $date1 = new DateTime(); // Сейчас
 $dayDiff = $date2->diff($date1)->format('%a');
 $dateToday = date('d.m.Y');
-echo $dayDiff;
 ?>
 <!doctype html>
 <html lang="en">
