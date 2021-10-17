@@ -33,7 +33,7 @@ else{
             <a class="url" href="arrays.php">
                 <p class="url_p">Массивы</p>
             </a>
-            <a class="url" href="">
+            <a class="url" href="authorization.php">
                 <p class="url_p">Регистрация</p>
             </a>
         </nav>
