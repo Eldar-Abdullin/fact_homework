@@ -3,8 +3,7 @@
 @import url('arrays.css');
 @import url('table-mendeleev.css');
 .page {
-    background-image: url(https://phonoteka.org/uploads/posts/2021-03/1616705966_20-p-kartinki-dlya-fona-saita-24.jpg);
-    color: white;
+    color: black;
     font-family: 'Open Sans', sans-serif;
     max-width: 1280px;
     margin: 20px auto;

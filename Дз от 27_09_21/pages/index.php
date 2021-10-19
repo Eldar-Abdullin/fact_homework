@@ -54,7 +54,7 @@ function fibonachi($x, $y){
     <link rel="stylesheet" href="../styles/style.css">
     <title>Эльдар</title>
 </head>
-<body class="page">
+<body class="page" style="background-color: <? echo $_COOKIE['color']?>">
 <?
 require_once('header.php');
 ?>

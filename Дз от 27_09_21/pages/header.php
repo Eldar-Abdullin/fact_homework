@@ -1,4 +1,5 @@
 <?
+
 date_default_timezone_set('Asia/Yekaterinburg');
 $time = date('G');
 $url = '';
@@ -7,6 +8,19 @@ if($time > 8 && $time < 20){
 }
 else{
     $url = "../images/moon.png";
+}
+$color = $_POST['color'];
+if($color == 'green') {
+    setcookie('color', 'green', time() + 3600 * 24 * 7);
+}
+if($color == 'yellow') {
+    setcookie('color', 'yellow', time() + 3600 * 24 * 7);
+}
+if($color == 'blue') {
+    setcookie('color', 'blue', time() + 3600 * 24 * 7);
+}
+if($color == 'white') {
+    setcookie('color', 'white', time() + 3600 * 24 * 7);
 }
 ?>
 <!doctype html>
@@ -22,6 +36,21 @@ else{
 <body>
 <header>
     <div class="header">
+        <form method="post">
+            Выберите задний цвет сайта: <select name="color" id="">
+                <option value="green">зеленый</option>
+                <option value="yellow">желтый</option>
+                <option value="blue">синий</option>
+                <option value="white">белый</option>
+                <input type="submit">
+            </select>
+        </form>
+        <p>Последний посещённый сайт: <?
+        if($_COOKIE['lastSite'] === 'fact'){
+            echo 'Fact';
+        }
+        else{ echo 'Bitrix';}
+            ?></p>
         <a class="url" href="index.php">
         <h1 class="h1">Личная страничка студента</h1>
         </a>

@@ -46,7 +46,7 @@
 }
 .url{
     text-decoration: none;
-    color: white;
+    color: black;
     padding-left: 10px;
     transition: opacity linear 0.3s;
     height: fit-content;

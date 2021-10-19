@@ -1,29 +1,52 @@
 <?
+session_start();
+session_destroy();
+$site = $_POST['site'];
 $login = 'eldar';
 $password = md5('123');
 $result = '';
-function sendEmail($str){
+function sendEmail($str)
+{
     mail('mail@com.ru', 'Тема письма', $str);
 }
-if($_POST[comment] !== ''){
-    sendEmail($_POST[comment]);
+function selectSite($str){
+    header("location: $str");
 }
-print_r($_POST);
-if (count($_POST) > 0){
+
+if($site == 'fact'){
+    selectSite('https://fact.digital/');
+    $site = '';
+    setcookie('lastSite', 'fact', time() + 3600 * 24 * 7, '/');
+}
+elseif($site == 'bitrix'){
+    selectSite('https://www.1c-bitrix.ru/');
+    $site = '';
+    setcookie('lastSite', 'bitrix', time() + 3600 * 24 * 7, '/');
+}
+
+if ($_POST['comment'] !== '') {
+    sendEmail($_POST['comment']);
+}
+if (count($_POST) > 0) {
     $newLogin = trim($_POST['login']);
     $newPassword = md5(trim($_POST['password']));
     if ($newLogin == '' || $newPassword == '') {
-        $result =  'Заполните все данные';
-    }
-    elseif ($newLogin === $login && $newPassword === $password) {
-        $result =  'Авторизация успешна' . '<br>' . '<textarea name="comment" id="" cols="30" rows="10"></textarea>' . '<button onclick="">Отправить</button>';
-
-    }
-    else{
+        $result = 'Заполните все данные';
+    } elseif ($newLogin === $login && $newPassword === $password) {
+        $result = 'Авторизация успешна' . '<br>' . '<textarea name="comment" id="" cols="30" rows="10"></textarea>' . '<br>' . '<button onclick="">Отправить</button>' . '<p>На какой сайт хотите перейти?</p>
+<br>
+<form method="post">
+    <select name="site" id="">
+        <option value="fact">fact</option>
+        <option value="bitrix">bitrix</option>
+    </select>
+    <input type="submit">
+</form>';
+    } else {
         $result = 'Данные неверны';
     }
 } else {
-    $result =  'Введите данные';
+    $result = 'Введите данные';
 }
 ?>
 <!doctype html>
@@ -36,15 +59,14 @@ if (count($_POST) > 0){
     <link rel="stylesheet" href="../styles/style.css">
     <title>Авторизация</title>
 </head>
-<body class="page">
+<body class="page" style="background-color: <? echo $_COOKIE['color']?>">
 <?
-require_once ('header.php');
+require_once('header.php');
 ?>
 <h1><?
-    if($login = true){
+    if ($login == true) {
         echo 'Авторизация';
-    }
-    else{
+    } else {
         echo 'Регистрация';
     }
     ?></h1>
@@ -52,9 +74,9 @@ require_once ('header.php');
     <input type="text" name="login">
     <input type="text" name="password">
     <button>Отправить</button>
-    <p><? echo $result?></p>
-
+    <p><? echo $result ?></p>
 </form>
+
 
 </body>
 </html>

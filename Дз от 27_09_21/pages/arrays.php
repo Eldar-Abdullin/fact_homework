@@ -49,7 +49,7 @@ $countArrNumber = array_count_values($newArr3);
     <link rel="stylesheet" href="../styles/style.css">
     <title>Массивы</title>
 </head>
-<body class="page">
+<body class="page" style="background-color: <? echo $_COOKIE['color']?>">
 <?
 require_once ('header.php');
 ?>
