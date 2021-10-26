@@ -13,10 +13,6 @@ $db_connect = mysqli_connect($hostname,$username,$password,$db);
 mysqli_set_charset($db_connect, 'utf8');
 $select = mysqli_query($db_connect, "select * from `users`");
 $arr_select = mysqli_fetch_all($select, MYSQLI_ASSOC);
-echo '<pre>';
-print_r($arr_select);
-echo '</pre>';
-print $arr_select[0]['Login'];
 function sendEmail($str)
 {
     mail('mail@com.ru', 'Тема письма', $str);
