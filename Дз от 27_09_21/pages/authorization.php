@@ -1,6 +1,6 @@
 <?
-session_start();
-session_destroy();
+require "AuthorizationClass.php";
+
 $site = $_POST['site'];
 //$login = 'eldar'; логин и пароль eldar 123
 //$password = md5('123');
@@ -9,10 +9,15 @@ $hostname = 'localhost';
 $username = 'eldar';
 $password = '123';
 $db = 'authorization';
-$db_connect = mysqli_connect($hostname,$username,$password,$db);
-mysqli_set_charset($db_connect, 'utf8');
-$select = mysqli_query($db_connect, "select * from `users`");
-$arr_select = mysqli_fetch_all($select, MYSQLI_ASSOC);
+$authorization = new AuthorizationClass($hostname,$username,$password,$db);
+$connect = $authorization->db_connect();
+$select = $authorization->select($connect);
+$arrayUsers = $authorization->arrSelect($select);
+print_r($arrayUsers);
+//$db_connect = mysqli_connect($hostname,$username,$password,$db);
+//mysqli_set_charset($db_connect, 'utf8');
+//$select = mysqli_query($db_connect, "select * from `users`");
+//$arr_select = mysqli_fetch_all($select, MYSQLI_ASSOC);
 function sendEmail($str)
 {
     mail('mail@com.ru', 'Тема письма', $str);
@@ -38,9 +43,9 @@ if ($_POST['comment'] !== '') {
 if (count($_POST) > 0) {
     $newLogin = trim($_POST['login']);
     $newPassword = md5(trim($_POST['password']));
-    if ($newLogin == '' || $newPassword == '') {
+    if ($newLogin === '' || $newPassword === '') {
         $result = 'Заполните все данные';
-    } elseif ($newLogin === $arr_select[0]['Login'] && $newPassword === $arr_select[0]['Password']) {
+    } elseif ($authorization->getUser($newLogin,$newPassword,$arrayUsers) == true) {
         $result = 'Авторизация успешна' . '<br>' . '<textarea name="comment" id="" cols="30" rows="10"></textarea>' . '<br>' . '<button onclick="">Отправить</button>' . '<p>На какой сайт хотите перейти?</p>
 <br>
 <form method="post">
@@ -78,7 +83,5 @@ require_once('header.php');
     <button>Отправить</button>
     <p><? echo $result ?></p>
 </form>
-
-
 </body>
 </html>
